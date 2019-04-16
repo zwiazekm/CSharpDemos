@@ -30,7 +30,7 @@ namespace TasksLib
             DueDate = date;
         }
 
-        public string ItemInfo()
+        public virtual string ItemInfo()
         {
             string info = $"Id: {ItemID}, {title}, " +
                 $"DueDate:{DueDate}, completed: {Completed}";

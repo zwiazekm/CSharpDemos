@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksLib", "TasksLib\TasksL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskClient", "TaskClient\TaskClient.csproj", "{5B770D04-DBD2-4521-AAF8-30BEBC81A2EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTaskClient", "WPFTaskClient\WPFTaskClient.csproj", "{C7778903-9EA4-45CA-987F-0A1638643271}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5B770D04-DBD2-4521-AAF8-30BEBC81A2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B770D04-DBD2-4521-AAF8-30BEBC81A2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B770D04-DBD2-4521-AAF8-30BEBC81A2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7778903-9EA4-45CA-987F-0A1638643271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7778903-9EA4-45CA-987F-0A1638643271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7778903-9EA4-45CA-987F-0A1638643271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7778903-9EA4-45CA-987F-0A1638643271}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

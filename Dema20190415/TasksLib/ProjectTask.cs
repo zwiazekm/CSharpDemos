@@ -19,7 +19,7 @@ namespace TasksLib
             Status = TaskStatus.Plan;   
         }
 
-        public new string ItemInfo()
+        public override string ItemInfo()
         {
             return $"Project {Project}, taskno: {TaskNo}, " +
                 $"status:{Status}";

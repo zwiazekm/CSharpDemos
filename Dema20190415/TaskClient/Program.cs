@@ -15,7 +15,8 @@ namespace TaskClient
             {
                 //ObslugaZadan();
                 //ObslugaZadan2();
-                ObslugaZadan3();
+                //ObslugaZadan3();
+                ObslugaZadan4();
                 //StruktAndOperatorDemo();
             }
             catch (Exception ex)
@@ -25,6 +26,27 @@ namespace TaskClient
             finally
             {
                 Console.WriteLine("Finally main");
+            }
+        }
+
+        private static void ObslugaZadan4()
+        {
+            ToDoManager mng = new ToDoManager();
+            ITaskManager itm = mng;
+            mng.AddTask("Todo 1", DateTime.Now);
+            mng.AddPayment("Payment 1", DateTime.Now, 200M);
+            mng.AddProjectTask("Projekt task 1", "Demo Project");
+
+            Console.WriteLine("Lista zadań:");
+            foreach (var item in mng.TaskList())
+            {
+                Console.WriteLine(item.ItemInfo());
+            }
+
+            Console.WriteLine("Lista opłat:");
+            foreach(var item in mng.Payments)
+            {
+                Console.WriteLine(item.ItemInfo());
             }
         }
 
@@ -39,12 +61,37 @@ namespace TaskClient
                 return am * rate;
             };
             p1.calculator += am => am * 0.2M;
-
+            p1.OnOverPaid += P1_OnOverPaid;
+            p1.OnOverPaid += 
+                (S, a) => Console.WriteLine($"Zdarzenie nadpłaty. {a}");
+            p1.OnPaid += P1_OnPaid;
+            p1.OnPaid += (o, ea) => Console.WriteLine("Zdarzenie spłaty");
             p1.Interest();
+            p1.Interest2(Calculator);
+            p1.Interest2((am, dd) => am * 0.2M);
             p1.Refund(230);
 
             Console.WriteLine($"Saldo: {p1.Amount}" );
+            p1.Refund(500);
+            Console.WriteLine($"Saldo: {p1.Amount}");
 
+        }
+
+        private static void P1_OnPaid(object sender, EventArgs e)
+        {
+            Console.WriteLine("Wpłacono kwotę");
+        }
+
+        private static void P1_OnOverPaid(object sender, decimal amount)
+        {
+            
+            Console.WriteLine($"Wystąpiło zdarzenie nadpłaty. " +
+                $"Kwota: {amount}");
+        }
+
+        private static decimal Calculator(decimal amount, DateTime dueDate)
+        {
+            return amount * 0.2M;
         }
 
         private static decimal Calculator(decimal amount)
