@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using TasksLib;
 
 namespace TaskClient
@@ -14,7 +13,10 @@ namespace TaskClient
 
             try
             {
-                ObslugaZadan();
+                //ObslugaZadan();
+                //ObslugaZadan2();
+                ObslugaZadan3();
+                //StruktAndOperatorDemo();
             }
             catch (Exception ex)
             {
@@ -25,6 +27,84 @@ namespace TaskClient
                 Console.WriteLine("Finally main");
             }
         }
+
+        private static void ObslugaZadan3()
+        {
+            Payment p1 = new Payment("Rata 1", 234M);
+            p1.DueDate = DateTime.Now.AddDays(-3);
+            p1.calculator += new CalcInterest(Calculator);
+            p1.calculator += am =>
+            {
+                decimal rate = 0.2M;
+                return am * rate;
+            };
+            p1.calculator += am => am * 0.2M;
+
+            p1.Interest();
+            p1.Refund(230);
+
+            Console.WriteLine($"Saldo: {p1.Amount}" );
+
+        }
+
+        private static decimal Calculator(decimal amount)
+        {
+            decimal rate = 0.2M;
+            return amount * rate;
+        }
+
+        private static void StruktAndOperatorDemo()
+        {
+            TaskNumber nr1 = new TaskNumber();
+            //{
+            //    number = 1,
+            //    prefix = "Test"
+            //};
+            //Console.WriteLine($"prefix: {nr1.prefix}, nr: {nr1.number}");
+
+            TaskNumber nr2 = "Pref/12/20";
+            string strnr = nr2;
+
+            //nr2.prefix = "Test2";
+            //nr2.number = 1;
+            //nr2.Suffix = "2019";
+
+            TaskNumber nr3 = new TaskNumber("Demo", 4)
+            {
+                Suffix = "r2p2"
+            };
+            TaskNumber nr4 = nr2 + 2;
+            int a = (int)nr4;
+            //Console.WriteLine($"prefix: {nr2.prefix}, nr: {nr2.number}");
+            Console.WriteLine(nr1);
+            Console.WriteLine(nr2);
+            Console.WriteLine(nr3);
+            Console.WriteLine(nr4);
+            Console.WriteLine($"Tekst z nr2: {strnr}");
+            Console.WriteLine($"nr z nr4:{a}");
+        }
+
+        static void ObslugaZadan2()
+        {
+            ShortProject sp1 = new ShortProject();
+            sp1.ProjectName = "Test Short Project";
+            sp1.DateFrom = DateTime.Parse("2017-04-01");
+            sp1.DateTo = DateTime.Parse("2020-05-30");
+
+            ProjectTask pt1 = new ProjectTask("Task 1");
+            pt1.Project = sp1;
+            pt1.StartDate = DateTime.Now.AddDays(2);
+            pt1.DueDate = DateTime.Now.AddDays(30);
+            //pt1.Status = "Plan";
+
+            ToDoItem td1 = pt1;
+            Console.WriteLine(td1.ItemInfo());
+            Console.WriteLine(pt1.ItemInfo());
+            Console.WriteLine(td1.CompleteInfo());
+            Console.WriteLine(pt1.CompleteInfo());
+            Console.WriteLine(pt1);
+        }
+
 
         private static void ObslugaZadan()
         {

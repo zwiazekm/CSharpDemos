@@ -37,6 +37,11 @@ namespace TasksLib
             return info;
         }
 
+        public virtual string CompleteInfo()
+        {
+            return $"Todo: {title}, complete: {Completed}";
+        }
+
         public void Complete()
         {
             Completed = true;
