@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskClient", "TaskClient\Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTaskClient", "WPFTaskClient\WPFTaskClient.csproj", "{C7778903-9EA4-45CA-987F-0A1638643271}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoDB", "DemoDB\DemoDB.csproj", "{07A981D0-E0F8-4F0C-83BA-DBD3B7DC350D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C7778903-9EA4-45CA-987F-0A1638643271}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7778903-9EA4-45CA-987F-0A1638643271}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7778903-9EA4-45CA-987F-0A1638643271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A981D0-E0F8-4F0C-83BA-DBD3B7DC350D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A981D0-E0F8-4F0C-83BA-DBD3B7DC350D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A981D0-E0F8-4F0C-83BA-DBD3B7DC350D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A981D0-E0F8-4F0C-83BA-DBD3B7DC350D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFTaskClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="241" Width="464">
-    <Grid>
-        <TextBox x:Name="infoText" HorizontalAlignment="Left" Height="23" Margin="32,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFEE9797"/>
-        <Button x:Name="infoButto" HorizontalAlignment="Left" Margin="166,26,0,0" VerticalAlignment="Top" Width="104" Height="56" Click="InfoButto_Click">
+        Title="MainWindow" Height="321" Width="539">
+    <Grid >
+        <TextBox x:Name="infoText" HorizontalAlignment="Left" Height="23" Margin="29,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFEE9797"/>
+        <Button x:Name="infoButto" HorizontalAlignment="Left" Margin="169,10,0,0" VerticalAlignment="Top" Width="104" Height="56" Click="InfoButto_Click">
             <StackPanel >
                 <Label Content="OK" Width="29" />
                 <Rectangle Height="19" Width="44" >
@@ -22,7 +22,12 @@
                 </Rectangle>
             </StackPanel>
         </Button>
-        <Label x:Name="infoLabel" Content="Label" HorizontalAlignment="Left" Margin="287,26,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label x:Name="infoLabel" Content="Label" HorizontalAlignment="Left" Margin="287,15,-9,0" VerticalAlignment="Top" Width="178"/>
+        <Button x:Name="newTaskButton" Content="Nowe zadanie" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Width="139" Height="29" Click="NewTaskButton_Click"/>
+        <Button x:Name="listaZadanBtn" Content="Lista Zadan" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Width="139" Height="27" Click="ListaZadanBtn_Click"/>
+        <ListBox x:Name="taskList" HorizontalAlignment="Left" Height="156" Margin="222,88,0,0" VerticalAlignment="Top" Width="174"/>
+        <Button x:Name="saveButton" Content="Zapisz niewykonane" HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top" Width="139" Height="30" Click="SaveButton_Click"/>
+        <Button x:Name="loadButton" Content="Wczytaj plik" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" Width="139" Height="27" Click="LoadButton_Click"/>
 
     </Grid>
 </Window>

@@ -71,5 +71,10 @@ namespace TasksLib
         }
 
         public bool Completed { get; private set; }
+
+        public override string ToString()
+        {
+            return ItemInfo();
+        }
     }
 }
